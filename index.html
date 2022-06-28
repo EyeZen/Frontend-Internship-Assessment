@@ -23,7 +23,7 @@
             </ul>
         </header>
         <main>
-            <form class="password-reset-form">
+            <form class="password-reset-form" id="password_reset_form">
                 <h1 class="reset-form__header">Password Reset</h1>
                 <div>
                     <label for="password" class="reset-form__label">NEW PASSWORD</label>
@@ -31,14 +31,15 @@
                 </div>
                 <div>
                     <label for="password_repeat" class="reset-form__label">RE-ENTER NEW PASSWORD</label>
-                    <input type="password" name="password_repeat" id="password_repeat"/>
+                    <input type="password" name="password_repeat" id="password_repeat" />
+                    <p id="invalid_status" class="invisible">Passwords do not match</p>
                 </div>
-                <input type="submit" class="btn_reset" value="Reset Password">
+                <input type="submit" class="btn_primary" value="Reset Password">
             </form>
-            <div class="card">
+            <div class="card hidden" id="card">
                 <h1>Password Changed</h1>
                 <p>Your password has been updated! Now get back in the dirver seat, racers are waiting for you!</p>
-                <button class="btn_join-race">join a race</button>
+                <button class="btn_primary">JOIN A RACE</button>
             </div>
         </main>
         <footer>
@@ -50,5 +51,6 @@
             </ul>
         </footer>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -105,7 +105,9 @@ header {
     opacity: 0.9;;
 }
 
-/* main */
+/* ----------------------- */
+/*           main          */
+/* ----------------------- */
 main {
     flex: 1;
     color: var(--text-color-primary);
@@ -114,6 +116,7 @@ main {
     justify-content: center;
     align-items: center;
 }
+/* Password Reset Form */
 .password-reset-form {
     display: flex;
     flex-direction: column;
@@ -140,27 +143,28 @@ main {
     padding-inline: 0.5em;
     /* border: 1px solid black; */
 }
-.btn_reset {
-    outline: none;
-    border: none;
 
-    background-color: var(--background-color-secondary);
-    color: var(--text-color-secondary);
-    font-size: 1.2em;
-    font-weight: 500;
-    padding-block: 0.5em;
-    border-radius: 5px;
-    cursor: pointer;
+input.invalid_password {
+    outline: 1px solid red;
 }
-.btn_reset:active {
-    opacity: 0.9;
+#invalid_status {
+    color: red;
+    margin-top: 0.5rem;
 }
 
+/* card */
 .card {
-    display: none;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+}
+.card > * {
+    margin-bottom: 1.5rem;
 }
 
-/* footer */
+/* ----------------------- */
+/*         footer          */
+/* ----------------------- */
 footer {
     color: var(--text-color-secondary);
     background-color: var(--background-color);
@@ -173,4 +177,29 @@ footer {
     width: 50%;
     margin-left: 15%;
     margin-block: 2em;
+}
+
+/* general classes */
+
+.btn_primary  {
+    outline: none;
+    border: none;
+
+    background-color: var(--background-color-secondary);
+    color: var(--text-color-secondary);
+    font-size: 1.2em;
+    font-weight: 500;
+    padding-block: 0.5em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn_primary:active {
+    opacity: 0.9;
+}
+
+.hidden {
+    display: none;
+}
+.invisible {
+    visibility: hidden;
 }
