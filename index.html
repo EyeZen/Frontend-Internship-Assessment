@@ -5,9 +5,223 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frontend Internship Assessment</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- ------------------------- -->
+    <!--             CSS           -->
+    <!-- ------------------------- -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <style>
+        * {
+            margin: 0;
+            padding:0;
+            box-sizing: border-box;
+        }
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        a:active {color:inherit;}
+
+        :root {
+            --background-color: rgb(4, 171, 255);
+            --background-color-primary: white;
+            --background-color-secondary: black;
+            --text-color-primary: black;
+            --text-color-secondary: white;
+        }
+
+        .container {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
+        }
+        /* header */
+        header {
+            background-color: var(--background-color);
+            color: var(--text-color-primary);
+            font-weight: 700;
+
+            display: flex;
+            align-items: center;
+        }
+        .header-logo {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            padding-left: 7rem;
+            padding-block: 0.5rem;
+
+            --border-radius: 5px;
+        }
+        .logo-container {
+            padding-left: 1.2rem;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            transform: skewX(-20deg);
+            position: relative;
+        }
+        .logo {
+            font-weight: 900;
+            font-size: 1.8em;
+            color: var(--text-color-secondary);
+
+            display: inline-block;
+            background-color: var(--background-color-secondary);
+            padding: 0.1em 0.5em;
+            border-top-right-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+
+
+            position: relative;
+
+        }
+        .logo::before, .logo::after, .logo-container::before {
+            content: '';
+            display: flex;
+            height: 100%;
+            border: 1px solid black;
+            position: absolute;
+            top: 0;
+        }
+        .logo::after { left: -0.4rem;}
+        .logo::before { left: -0.8rem;}
+        .logo-container::before { left: 0rem; }
+
+        .logo-title { font-size: 0.5rem; }
+
+        .navbar {
+            flex: 1;
+            list-style: none;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 2rem;
+            font-size: 1.2em;
+        }
+        .btn_login {
+            background-color: var(--background-color-primary);
+            padding: 0.5em 1.5em;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .btn_login:active {
+            opacity: 0.9;;
+        }
+
+        /* ----------------------- */
+        /*           main          */
+        /* ----------------------- */
+        main {
+            flex: 1;
+            color: var(--text-color-primary);
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        /* Password Reset Form */
+        .password-reset-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .password-reset-form > * {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: 2rem;
+        }
+        .reset-form__label {
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            text-align: justify;
+            letter-spacing: 2px;
+            word-spacing: 3px;
+            width: 100%;
+        }
+        .reset-form__label ~ input {
+            outline: 1px solid black;
+            font-size: 1.2em;
+            border: none;
+            padding-inline: 0.5em;
+            /* border: 1px solid black; */
+        }
+
+        input.invalid_password {
+            outline: 1px solid red;
+        }
+        #invalid_status {
+            color: red;
+            margin-top: 0.5rem;
+        }
+
+        /* card */
+        .card {
+            width: 25%;
+            display: flex;
+            flex-direction: column;
+        }
+        .card > * {
+            margin-bottom: 1.5rem;
+        }
+
+        /* ----------------------- */
+        /*         footer          */
+        /* ----------------------- */
+        footer {
+            color: var(--text-color-secondary);
+            background-color: var(--background-color);
+            font-weight: 700;
+        }
+        .links {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            width: 50%;
+            margin-left: 15%;
+            margin-block: 2em;
+        }
+
+        /* general classes */
+
+        .btn_primary  {
+            outline: none;
+            border: none;
+
+            background-color: var(--background-color-secondary);
+            color: var(--text-color-secondary);
+            font-size: 1.2em;
+            font-weight: 500;
+            padding-block: 0.5em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn_primary:active {
+            opacity: 0.9;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .invisible {
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
+    <!-- ------------------------- -->
+    <!--            HTML           -->
+    <!-- ------------------------- -->
     <div class="container">
         <header>
             <aside class="header-logo">
@@ -51,6 +265,64 @@
             </ul>
         </footer>
     </div>
-    <script src="script.js"></script>
+
+    <!-- ------------------------- -->
+    <!--         JavaScript        -->
+    <!-- ------------------------- -->
+    <script>
+        document.getElementById('password_reset_form')
+        .addEventListener('submit', e => {
+            e.preventDefault();
+            
+            if(verifyPassword()) {
+                showCard();
+            }
+        })
+        document.querySelectorAll('.reset-form__label ~ input')
+        .forEach(htmlInput => {
+            htmlInput.addEventListener('change', hideError)
+        })
+
+        function showCard() {
+            const form = document.getElementById('password_reset_form');
+            const card = document.getElementById('card');
+            form.classList.add('hidden');
+            card.classList.remove('hidden');
+        }
+
+        function verifyPassword() {
+            const password = document.getElementById('password').value;
+            const password_repeat = document.getElementById('password_repeat').value;
+
+            if(password !== password_repeat) {
+                showError('Password do not match');
+                return false;
+            } else if(password.length < 8) {
+                showError('Password must be atleat 8 characters long')
+                return false;
+            } else if(/^[A-Z|a-z]+$/.test(password)) {
+                showError('Password must be alpha-numeric');
+                return false;
+            }
+            return true;
+        }
+
+        function showError(err) {
+            const password_repeat = document.getElementById('password_repeat');
+            const invalid_status = document.getElementById('invalid_status');
+            invalid_status.textContent = err;
+            invalid_status.classList.remove('invisible');
+            password_repeat.classList.add('invalid_password');
+
+        }
+
+        function hideError() {
+            const password_repeat = document.getElementById('password_repeat');
+            const invalid_status = document.getElementById('invalid_status');
+            invalid_status.textContent = '';
+            invalid_status.classList.add('invisible');
+            password_repeat.classList.remove('invalid_password');
+        }
+    </script>
 </body>
 </html>
